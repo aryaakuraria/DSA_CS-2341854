@@ -1,0 +1,22 @@
+Q) FIND NUMBERS WITH EVEN NUMBERS OF DIGITS 
+
+class Solution {
+    public int findNumbers(int[] nums) {
+        int count = 0;
+        for (int num : nums) {
+            if (digits(num) % 2 == 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    private int digits(int num) {
+        int d = 0;
+        while (num > 0) {
+            d++;
+            num /= 10;
+        }
+        return d;
+    }
+}
