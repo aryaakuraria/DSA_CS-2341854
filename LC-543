@@ -1,0 +1,24 @@
+Q) DIAMETER OF BINARY TREE
+
+class Solution {
+
+    int max = 0;
+
+    public int diameterOfBinaryTree(TreeNode root) {
+        checkHeight(root);
+        return max;
+    }
+
+    public int checkHeight(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+
+        int left = checkHeight(root.left);
+        int right = checkHeight(root.right);
+
+        max = Math.max(max, left + right);
+
+        return Math.max(left, right) + 1;
+    }
+}
